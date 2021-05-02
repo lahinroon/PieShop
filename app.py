@@ -11,7 +11,11 @@ def contact():
 
 @app.route("/pies")
 def pies():
-    return render_template("pies.html")    
+    return render_template("pies.html")   
+
+@app.route("/order")
+def order():
+    return render_template("order.html")   
 
 if __name__== "__main__":
     app.run(debug=True) 

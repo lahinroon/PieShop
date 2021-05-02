@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Order | Bethany's Pie Shop</title>
-    <link rel="stylesheet" href="site.css" type="text/css" />
+    <link rel="stylesheet" href="/static/site.css" type="text/css" />
     <style>
       @media only screen and (min-width: 768px) {
         article {
@@ -54,28 +54,29 @@
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="pies.html">Pies</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="pies">Pies</a></li>
+          <li><a href="contact">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <aside><img src="images/logo.png" alt="Bethany's Pie Shop" /></aside>
+      <aside><img src="static/images/logo.png" alt="Bethany's Pie Shop" /></aside>
 
       <article>
         <!-- ADD CONTENT HERE -->
         <h1>Order</h1>
 
         <div class="pie">
-          <img src="" />
+          <img src=""/>
           <div class="columns">
             <div class="title"></div>
             <div class="price"></div>
           </div>
           <p class="desc"></p>
         </div>
-
+        
+        <!-- Create forms for user to input order details-->
         <form action="http://localhost:7071/api/post" method="POST">
           <input type="hidden" id="pie-order" name="pie-order">
           <input type="hidden" id="location" name="location">
@@ -180,8 +181,8 @@
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="pies.html">Pies</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="pies">Pies</a></li>
+          <li><a href="contact">Contact</a></li>
         </ul>
       </nav>
     </footer>
@@ -195,6 +196,7 @@
           longitude: "unknown"
         };
 
+        // Geolocation API
         window.navigator.geolocation.getCurrentPosition(
           function(position) {
 
@@ -226,7 +228,7 @@
           orderInput.value = order;
 
           const img = pie.querySelector("img");
-          img.setAttribute("src", `images/${pieOrder.id}.png`);
+          img.setAttribute("src", `/static/images/${pieOrder.id}.png`);
           img.setAttribute("alt", pieOrder.title);
         }
       });
