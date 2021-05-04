@@ -17,5 +17,13 @@ def pies():
 def order():
     return render_template("order.html")   
 
+@app.route("/applepie")
+def applepies():
+    return render_template("applepie.html")  
+
+@app.route("/seasonalpies")
+def seasonalpies():
+    return render_template("seasonalpies.html")  
+
 if __name__== "__main__":
     app.run(debug=True) 
