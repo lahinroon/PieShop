@@ -10,8 +10,44 @@
 </head>
 
 <body>
+    
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
+            
+            <div class="container">
+                
+                <a class="navbar-brand" href="index.html">
+                    <img src="/static/images/pie.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                        Bethany's Pie Shop</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="allpies.html">Pies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="order.html">Order</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <main role="main">
+
+        <div class="jumbotron jumbotron-detail-apple-pie d-flex align-items-center"> 
+            <div class="container">
+                <h1 class="display-3 text-white">Apple pie</h1>
+            </div>
+        </div>
         <div class="container">
             <h1>Apple pie
                 <small>Our famous, number-one selling pie.</small>
@@ -19,15 +55,15 @@
             
             <div class="row" >
                 <div class="col-md-8">
-                    <img src="/static/images/products/applepie.jpg" class="rounded" width="500" alt="Image of apple pie">
+                    <img src="/static/images/products/applepie.jpg" class="rounded-3 img-fluid" alt="Image of apple pie">
                 </div>
 
                 <div class="col-md-4"> 
-                    <h3>About this pie</h3>
-                    <p>Sweet ice cream jelly beans lemon drops. Pastry toffee fruitcake gingerbread jelly-o.
+                    <h3 class="my-1 text-capitalize">About this pie</h3>
+                    <p class="text-justify">Sweet ice cream jelly beans lemon drops. Pastry toffee fruitcake gingerbread jelly-o.
                         Lollipop sesame snaps muffin. Macaroon halvah marshmallow sesame snaps sugar plum dragée.
                         Wafer pudding sesame snaps tootsie roll sesame snaps cake chupa chups jelly beans.</p>
-                    <h3>Ingredients</h3>
+                    <h3 class="my-3">Ingredients</h3>
                     <ul>
                         <li>Apple</li>
                         <li>Sugar</li>
@@ -39,14 +75,56 @@
                             <strong>$14.95</strong>
                         </div>
                         <div class="col-md-8">
-                            <a type="button" href="shoppingbasket.html" class="btn btn-success float-end">
+                            <a type="button" href="shoppingbasket.html" data-bs-toggle="modal" data-bs-target="#addToBasketModal"
+                             class="btn btn-success float-end">
                                 Add to basket
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <h3>Other customers also bought...</h3>
+
+            <div class="row">
+                <div class="table-responsive p-4">
+                    <table class="table table-striped table-hover table-bordered table-responsive">
+                        <!--table-dark table-hover table-bordered table-responsive  -->
+                        <thead>
+                            <!-- class="thead-light"-->
+                            <tr class="table-light">
+                                <th>Ingredient</th>
+                                <th>Risk</th>
+                                <th>Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-primary">
+                                <td>Apple</td>
+                                <td>Yes</td>
+                                <td>50%</td>
+                            </tr>
+                            <tr>
+                                <td>Eggs</td>
+                                <td>Yes</td>
+                                <td class="table-danger">10%</td>
+                            </tr>
+                            <tr>
+                                <td>Nuts</td>
+                                <td>Maybe</td>
+                                <td>&lt;0.1%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            <div class="p-4 mb-3 mt-2 bg-light rounded border border-primary">
+                <h4> A quote from Bethany</h4>
+                <p class="mb-0 fst-italic">My recipes have been in our family for generations. We hope
+                    you enjoy our pies! -
+                    Bethany
+                </p>
+            </div>
+
+            <h3 class="my-4">Other customers also bought...</h3>
 
             <div class="row">
                 <div class="col-md-3 col-sm-6">
@@ -75,6 +153,29 @@
             </div>
         </div>
     </main>
+
+    <div class="modal fade" tabindex="-1" id="addToBasketModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Bethany's Pie Shop</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Apple pie was added to your basket</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue shopping</button>
+                    <button type="button" class="btn btn-primary">View basket</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
 </body>
 
 </html>
